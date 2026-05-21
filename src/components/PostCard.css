@@ -11,3 +11,24 @@
   object-fit: cover;
   display: block;
 }
+.follow-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0095f6;
+  background: none;
+  border: 1px solid #0095f6;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 4px 12px;  /* small size */
+}
+
+.follow-btn.following {
+  color: #262626;
+  border: 1px solid #dbdbdb;
+}
+
+.post-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;  /* three dot gap */
+}

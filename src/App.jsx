@@ -1,3 +1,4 @@
+import Header from './components/Header'
 import StoriesRow from './components/StoriesRow'
 import PostCard from './components/PostCard'
 import BottomNav from './components/BottomNav'
@@ -42,6 +43,7 @@ const posts = [
 function App() {
   return (
     <div className="app">
+      <Header/>
       <div className="feed">
         <StoriesRow />
         {posts.map((post) => (

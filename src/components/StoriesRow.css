@@ -53,3 +53,11 @@
 .your-story {
   background: #dbdbdb;
 }
+.story-ring {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366);
+  position: relative; /* ← ADD — plus icon fix aagum! */
+}

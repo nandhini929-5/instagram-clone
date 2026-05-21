@@ -1,9 +1,17 @@
- .stories-row {
+.stories-row {
   display: flex;
   gap: 12px;
   padding: 12px 16px;
   overflow-x: auto;
+  overflow-y: hidden;        /* ← ADD */
+  scrollbar-width: none;     /* ← ADD */
+  -ms-overflow-style: none;  /* ← ADD */
   border-bottom: 1px solid #dbdbdb;
+}
+
+/* ← This full new block ADD pannu */
+.stories-row::-webkit-scrollbar {
+  display: none;
 }
 
 .story {
@@ -126,9 +134,11 @@
   margin: 0 auto;
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .feed {
+  padding-top: 60px;
   padding-bottom: 60px;
 }
 
@@ -157,7 +167,7 @@
   max-width: 480px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between;  /* + left, logo center, heart right */
   padding: 12px 16px;
   background: white;
   border-bottom: 1px solid #dbdbdb;
@@ -165,18 +175,9 @@
 }
 
 .header-logo {
-  font-size: 22px;
+  font-size: 24px;
   font-family: 'Billabong', cursive;
-  letter-spacing: 1px;
-}
-
-.header-icons {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-.feed {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);  /* exact center */
 }

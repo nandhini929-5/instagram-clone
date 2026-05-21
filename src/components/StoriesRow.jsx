@@ -18,16 +18,15 @@ function StoriesRow() {
   const [activeStory, setActiveStory] = useState(null)
 
   const handleStoryClick = (story) => {
-    if (story.isYours) return // Your Story click panna open aagaadhu
+    if (story.isYours) return
     setActiveStory(story)
     setTimeout(() => {
-      setActiveStory(null) // 3 seconds la auto close
+      setActiveStory(null)
     }, 3000)
   }
 
   return (
     <>
-      {/* Fullscreen Story View */}
       {activeStory && (
         <div className="story-fullscreen" onClick={() => setActiveStory(null)}>
           <img src={activeStory.image} alt={activeStory.username} className="story-fullscreen-img" />
@@ -35,13 +34,11 @@ function StoriesRow() {
         </div>
       )}
 
-      {/* Stories Row */}
       <div className="stories-row">
         {stories.map((story) => (
           <div key={story.id} className="story" onClick={() => handleStoryClick(story)}>
             <div className={`story-ring ${story.isYours ? "your-story" : ""}`}>
               <img src={story.image} alt={story.username} className="story-avatar" />
-              {/* Plus icon only on Your Story */}
               {story.isYours && (
                 <div className="story-plus">
                   <FaPlus size={10} color="white" />

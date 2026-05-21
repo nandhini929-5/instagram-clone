@@ -6,6 +6,7 @@ function PostCard({ post }) {
   const [liked, setLiked] = useState(false)
   const [likes, setLikes] = useState(Number(post.likes))
   const [saved, setSaved] = useState(false)
+  const [followed, setFollowed] = useState(false)
 
   function handleLike() {
     if (liked) {
@@ -33,7 +34,15 @@ function PostCard({ post }) {
             <div className="post-location">{post.location}</div>
           </div>
         </div>
-        <span style={{ fontSize: "20px", cursor: "pointer" }}>⋯</span>
+        <div className="post-header-right">
+          <button
+            className={`follow-btn ${followed ? "following" : ""}`}
+            onClick={() => setFollowed(!followed)}
+          >
+            {followed ? "Following" : "Follow"}
+          </button>
+          <span style={{ fontSize: "20px", cursor: "pointer" }}>⋯</span>
+        </div>
       </div>
 
       {/* Post Image */}
