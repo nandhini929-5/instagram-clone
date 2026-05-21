@@ -1,58 +1,21 @@
-import Header from './components/Header'
-import StoriesRow from './components/StoriesRow'
-import PostCard from './components/PostCard'
-import BottomNav from './components/BottomNav'
-import './App.css'
-import user1 from './assets/user1.jpeg'
-import user2 from './assets/user2.jpeg'
-import user3 from './assets/user3.jpeg'
-
-const posts = [
-  {
-    id: 1,
-    username: "priya_art",
-    location: "Chennai, India",
-    avatar: user1,
-    postImage: user2,
-    likes: 1248,
-    caption: "Golden hour hits different in Chennai ✨",
-    time: "2 hours ago"
-  },
-  {
-    id: 2,
-    username: "dev_karan",
-    location: "Bangalore, India",
-    avatar: user2,
-    postImage: user3,
-    likes: 892,
-    caption: "Shipped my first React project today 🚀",
-    time: "5 hours ago"
-  },
-  {
-    id: 3,
-    username: "sara_clicks",
-    location: "Mumbai, India",
-    avatar: user3,
-    postImage: user1,
-    likes: 3421,
-    caption: "Life is beautiful 🌸",
-    time: "1 day ago"
-  },
-]
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
+import ConfirmPage from './pages/ConfirmPage';
+import DashboardPage from './pages/DashboardPage';
 
 function App() {
   return (
-    <div className="app">
-      <Header/>
-      <div className="feed">
-        <StoriesRow />
-        {posts.map((post) => (
-          <PostCard key={post.id} post={post} />
-        ))}
-      </div>
-      <BottomNav />
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/confirm" element={<ConfirmPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
