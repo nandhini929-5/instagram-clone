@@ -1,0 +1,55 @@
+.story-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 390px;        /* app width same */
+  max-width: 390px;
+  height: 100%;
+  background: black;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.story-fullscreen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-fullscreen-name {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  background: rgba(0,0,0,0.4);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* Plus icon on Your Story */
+.story-plus {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background: #0095f6;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+/* Your story - no gradient ring */
+.your-story {
+  background: #dbdbdb;
+}

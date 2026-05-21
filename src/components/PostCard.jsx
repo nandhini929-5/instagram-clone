@@ -4,7 +4,7 @@ import { IoPaperPlaneOutline } from "react-icons/io5"
 
 function PostCard({ post }) {
   const [liked, setLiked] = useState(false)
-const [likes, setLikes] = useState(Number(post.likes))
+  const [likes, setLikes] = useState(Number(post.likes))
   const [saved, setSaved] = useState(false)
 
   function handleLike() {
@@ -24,11 +24,10 @@ const [likes, setLikes] = useState(Number(post.likes))
   return (
     <div className="post">
 
+      {/* Header */}
       <div className="post-header">
         <div className="post-user">
-          <div className="post-avatar" style={{ background: post.color }}>
-            {post.emoji}
-          </div>
+          <img src={post.avatar} alt={post.username} className="post-avatar" />
           <div>
             <div className="post-username">{post.username}</div>
             <div className="post-location">{post.location}</div>
@@ -37,10 +36,10 @@ const [likes, setLikes] = useState(Number(post.likes))
         <span style={{ fontSize: "20px", cursor: "pointer" }}>⋯</span>
       </div>
 
-      <div className="post-image" style={{ background: post.color }}>
-        <span style={{ fontSize: "80px" }}>{post.image}</span>
-      </div>
+      {/* Post Image */}
+      <img src={post.postImage} alt={post.username} className="post-image" />
 
+      {/* Actions */}
       <div className="post-actions">
         <div className="post-actions-left">
           {liked
